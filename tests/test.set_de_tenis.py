@@ -33,10 +33,12 @@ class TestSetDeTenis(unittest.TestCase):
         valor_esperado = "Inválido"
         valor_actual = evaluar(1, 7)
         self.assertEqual(valor_esperado, valor_actual)
+
     def test_ultimo_juego(self):
         valor_esperado = "Ganó B"
         valor_actual = evaluar(6, 7)
         self.assertEqual(valor_esperado, valor_actual)
+        
     def test_prueba_borde(self):
         valor_esperado = "Inválido"
         valor_actual = evaluar(999999, 999997)

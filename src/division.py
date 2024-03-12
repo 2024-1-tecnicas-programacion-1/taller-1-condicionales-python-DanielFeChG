@@ -1,15 +1,18 @@
 def evaluar(dividendo, divisor):
     # TODO: Coloca aquí el código del ejercicio 3: Division
-    residuo = dividendo % divisor
-    cociente = int(dividendo/divisor)
-    exactitud = ""
-    if residuo == 0:
-        exactitud = "es exacta."
+    if divisor == 0:
+        respuesta = "No se puede dividir entre 0"
     else:
-         exactitud = "no es exacta."
-    respuesta = "La división " + exactitud + " \n" \
-        "Cociente: " + str(cociente) + "\n" \
-        "Residuo: " + str(residuo)
+        residuo = dividendo % divisor
+        cociente = int(dividendo/divisor)
+        exactitud = ""
+        if residuo == 0:
+            exactitud = "es exacta."
+        else:
+            exactitud = "no es exacta."
+        respuesta = "La división " + exactitud + " \n" \
+            "Cociente: " + str(cociente) + "\n" \
+            "Residuo: " + str(residuo)
     return respuesta
 
 if __name__ == '__main__':

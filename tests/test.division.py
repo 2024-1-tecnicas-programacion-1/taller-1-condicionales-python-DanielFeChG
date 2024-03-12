@@ -40,6 +40,11 @@ class TestDivision(unittest.TestCase):
         valor_actual = evaluar(1, 2)
         self.assertEqual(valor_esperado, valor_actual)
     
+    def testPruebaDivisonEntreCero(self):
+        valor_esperado = "No se puede dividir entre 0"
+        valor_actual = evaluar(5, 0)
+        self.assertEqual(valor_esperado, valor_actual)
+    
     # TODO: Agrega tus otros casos de prueba aquí
     
 

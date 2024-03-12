@@ -1,21 +1,24 @@
 def evaluar(num_victorias_a, num_victorias_b):
     # TODO: Coloca aquí el código del ejercicio 1: Set de tenis
     resultado = ""
-    if(num_victorias_a >=6 or num_victorias_b >= 6) and (num_victorias_a > num_victorias_b+1 or num_victorias_b > num_victorias_a+1):
-        if (num_victorias_a+2 < num_victorias_b or num_victorias_b+2 < num_victorias_a) or (num_victorias_a > 7 or num_victorias_b > 7):
-            resultado = "Inválido"
-        elif num_victorias_a > num_victorias_b:
-            resultado = "Ganó A"
-        else:
-            resultado = "Ganó B"
+    if num_victorias_a > num_victorias_b:
+        mayor=num_victorias_a
+        menor=num_victorias_b
+        ganador = "A"
     else:
-        if num_victorias_a == 7 and num_victorias_b == 6:
-            resultado = "Ganó A"
-        elif num_victorias_a == 6 and num_victorias_b == 7:
-            resultado = "Ganó B"
-        else:
-            resultado = "Aún no termina"
-    return (resultado)
+        mayor=num_victorias_b
+        menor= num_victorias_a
+        ganador ="B"
+
+    if (mayor == 6) and (mayor-menor==2): #Alguien ya ganó con 2 victorias encima y hasta 6
+        respuesta = "Ganó " + ganador
+    elif (mayor == 7 and (menor == 6 or menor == 5) ):#Ganó alguien por ultimo juego empate 6-6, o por empate 5-5
+        respuesta="Ganó " + ganador 
+    elif (mayor<7 and mayor-menor!=2): #Condiciones por las que aun no termina
+        respuesta="Aún no termina"
+    else: #Todo lo demás es inválido
+        respuesta = "Inválido"
+    return (respuesta)
 
 if __name__ == '__main__':
     print("Los juegos ganaddor por A:", end="")
